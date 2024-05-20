@@ -1,0 +1,32 @@
+body {
+    margin: unset;
+    cursor: url('../images/cursor.png');
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.gallery {
+    padding: none;
+    margin: 24px 156px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: calc((100% - 48px) / 3);
+}
+
+.gallery-link {
+    cursor: url('../images/cursor.png'), auto;
+}
