@@ -70,24 +70,13 @@ const modal = document.getElementById('modal');
 
 gallery.addEventListener('click', (event) => {
   event.preventDefault();
-
   if (event.target.nodeName !== 'IMG') return;
 
-  const largeImage = `<img src="${event.target.dataset.source}" alt="${event.target.alt}" class="large-image">`;
-  modal.insertAdjacentHTML('afterbegin', largeImage);
-  modal.style.display = 'block';
-  toggleScrolling();
+  basicLightbox
+    .create(
+      `<img src="${event.target.dataset.source}" alt="${event.target.alt}" class="large-image">`,
+    )
+    .show();
+
   event.stopImmediatePropagation();
 });
-
-modal.addEventListener('click', () => {
-  modal.style.display = 'none';
-  modal.innerHTML = '';
-  toggleScrolling();
-});
-
-/* function to prevent scrolling when modal is open */
-function toggleScrolling() {
-  const body = document.body;
-  body.style.overflow = body.style.overflow === 'hidden' ? '' : 'hidden';
-}
