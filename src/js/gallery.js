@@ -1,4 +1,6 @@
 'use strict';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const images = [
   {
@@ -52,31 +54,22 @@ const gallery = document.querySelector('.gallery');
 
 const imageTags = images.map(({ preview, original, description }) => {
   return `<li class="gallery-item">
-  <a class="gallery-link" href="large-image.jpg">
-    <img
-      class="gallery-image"
-      src=${preview}
-      data-source=${original}
-      alt=${description}
-    />
-  </a>
-</li>
-`;
+    <a class="gallery-link" href="${original}">
+      <img
+        class="gallery-image"
+        src="${preview}"
+        alt="${description}"
+      />
+    </a>
+  </li>`;
 });
 
 gallery.insertAdjacentHTML('afterbegin', imageTags.join(''));
 
-const modal = document.getElementById('modal');
+const lightbox = new SimpleLightbox('.gallery a', {});
 
-gallery.addEventListener('click', (event) => {
-  event.preventDefault();
-  if (event.target.nodeName !== 'IMG') return;
-
-  basicLightbox
-    .create(
-      `<img src="${event.target.dataset.source}" alt="${event.target.alt}" class="large-image">`,
-    )
-    .show();
-
-  event.stopImmediatePropagation();
+lightbox.on('error.simplelightbox', function(e) {
+  if (e.target !== this.currentImage) {
+    this.close();
+  }
 });
