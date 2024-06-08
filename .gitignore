@@ -8,7 +8,7 @@ yarn-error.log
 .idea
 
 # Compiled output
-#dist/ # is not ignored to enable the static GitHub Pages
+dist/
 build/
 
 # OS-specific files
