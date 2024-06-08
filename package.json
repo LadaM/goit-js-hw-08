@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/vanilla-app-template/",
+    "build": "vite build --base=/goit-js-hw-08/",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -13,7 +13,7 @@
     "simplelightbox": "^2.14.3",
     "vite": "^4.5.2"
   },
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Lada Murchych lada11lada@gmail.com",
   "license": "ISC",
   "dependencies": {
     "@vimeo/player": "^2.23.0",
