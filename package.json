@@ -9,13 +9,15 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "simplelightbox": "^2.14.3",
     "glob": "^8.1.0",
+    "simplelightbox": "^2.14.3",
     "vite": "^4.5.2"
   },
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@vimeo/player": "^2.23.0",
+    "lodash.throttle": "^4.1.1",
     "simplelightbox": "^2.14.3",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-html-inject": "^1.0.1"
